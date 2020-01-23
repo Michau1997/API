@@ -1,0 +1,7 @@
+<h1>{{ pytanie.tekst_pytania }}</h1>
+<ul>
+    {% for odp in pytanie.odpowiedz_set.all %}
+        <li>{{ odp.tekst_odpowiedzi }} -- {{ odp.glosy }} głosów</li>
+    {% endfor %}
+    </ul>
+<a href="{% url 'szczegoly' pytanie.id %}">Głosujesz jeszcze raz?</a>
